@@ -102,16 +102,21 @@ nav.lk a.l:hover{color:var(--on-pine)}
 /* approach ledger */
 .appr-intro{max-width:58ch;margin-top:24px;font-size:19px;color:var(--on-pine-mut)}
 .ledger{margin-top:58px;border:1px solid var(--pine-line)}
-.ledger .r{display:grid;grid-template-columns:1fr 1fr}
-.ledger .r>div{padding:22px 30px;border-bottom:1px solid var(--pine-line);display:flex;flex-direction:column;justify-content:center}
+.ledger .r{display:grid;grid-template-columns:1fr 1fr;align-items:stretch}
+.ledger .r>div{padding:22px 30px;border-bottom:1px solid var(--pine-line);display:flex;flex-direction:column;justify-content:flex-start}
 .ledger .r:last-child>div{border-bottom:0}
 .ledger .hd{font-family:'Jost';font-size:12px;letter-spacing:.18em;text-transform:uppercase}
 .ledger .hd.a{color:var(--on-pine-mut)}
 .ledger .hd.b{color:var(--sand);background:rgba(220,203,179,.06);border-left:1px solid var(--pine-line)}
-.ledger .a{color:var(--on-pine-mut);font-size:16.5px}
-.ledger .b{color:var(--on-pine);background:rgba(220,203,179,.045);border-left:1px solid var(--pine-line);font-size:16.5px}
+.ledger .a{color:var(--on-pine-mut);font-size:16.5px;line-height:1.5}
+.ledger .b{color:var(--on-pine);background:rgba(220,203,179,.045);border-left:1px solid var(--pine-line);font-size:16.5px;line-height:1.5}
 .myth{margin-top:54px;padding:36px 40px;border-left:2px solid var(--sand);background:linear-gradient(90deg,rgba(220,203,179,.08),transparent)}
 .myth p{font-family:'Jost',sans-serif;font-style:italic;font-size:clamp(21px,2.7vw,29px);color:var(--on-pine);max-width:38ch;line-height:1.32}
+
+@media (max-width:640px){
+  .ledger{border:none;margin-top: 20px;}
+}
+
 
 /* residences */
 .res-grid{margin-top:58px;display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:26px}
