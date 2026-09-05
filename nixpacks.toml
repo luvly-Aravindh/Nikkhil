@@ -1,5 +1,9 @@
 [phases.install]
+<<<<<<< HEAD
 cmds = ["npm install"]
+=======
+cmds = ["npm install --include=optional"]
+>>>>>>> f4425e905dc47b20d52c27d8072a45cbab91bba0
 
 [phases.build]
 cmds = ["npm run build"]

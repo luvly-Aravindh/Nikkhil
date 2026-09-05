@@ -1,3 +1,10 @@
+<<<<<<< HEAD
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+=======
+@import "tailwindcss";
+/* The authored site stylesheet is the source of truth for the design.
+   Imported after Tailwind so its resets and rules win. */
+@import "./styles/original.css";
+>>>>>>> f4425e905dc47b20d52c27d8072a45cbab91bba0
