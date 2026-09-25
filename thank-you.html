@@ -1,0 +1,410 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thank You · Nikhil Bora · Private Residential Advisory</title>
+    <meta
+      name="description"
+      content="Thank you for your enquiry with Nikhil Bora. Your property details have been received."
+    />
+
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;700&family=Jost:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@500;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+ <!-- Meta Pixel Code -->
+    <script>
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+
+      fbq('init', '1740025017295865');
+      fbq('track', 'PageView');
+    </script>
+    <!-- End Meta Pixel Code -->
+
+  
+  <script>
+  fbq('track', 'Lead');
+</script>
+
+    <style>
+      :root {
+        --bg: #121312;
+        --surface: #1a1917;
+        --accent: #c0a278;
+        --accent-bright: #ddc18b;
+        --bronze-dk: #8c6f43;
+        --text: #ece7de;
+        --text-bright: #FAF7F1;
+        --muted: #b7b0a3;
+      }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 24px;
+        font-family: "Jost", "Plus Jakarta Sans", sans-serif;
+        background: linear-gradient(135deg, #121312 0%, #1a1917 50%, #23201a 100%);
+        color: var(--text);
+        -webkit-font-smoothing: antialiased;
+      }
+      .shell {
+        width: min(100%, 1050px);
+        margin: 0 auto;
+      }
+      .card {
+        display: grid;
+        grid-template-columns: 1.15fr 0.85fr;
+        background: rgba(26, 25, 23, 0.95);
+        border-radius: 28px;
+        overflow: hidden;
+        box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(192, 162, 120, 0.18);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        animation: fadeUp 0.8s ease forwards;
+      }
+      .content {
+        padding: 60px 52px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 8px 16px;
+        border-radius: 999px;
+        background: rgba(192, 162, 120, 0.12);
+        border: 1px solid rgba(192, 162, 120, 0.35);
+        color: var(--accent-bright);
+        font-size: 0.82rem;
+        font-weight: 600;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        margin-bottom: 22px;
+        width: fit-content;
+      }
+      .pulse {
+        width: 9px;
+        height: 9px;
+        border-radius: 50%;
+        background: var(--accent);
+        box-shadow: 0 0 0 rgba(192, 162, 120, 0.6);
+        animation: pulse 1.8s infinite;
+      }
+      @keyframes pulse {
+        70% {
+          box-shadow: 0 0 0 10px rgba(192, 162, 120, 0);
+        }
+        100% {
+          box-shadow: 0 0 0 0 rgba(192, 162, 120, 0);
+        }
+      }
+      h1 {
+        font-size: clamp(2.4rem, 4.8vw, 3.8rem);
+        line-height: 1.08;
+        margin-bottom: 12px;
+        font-weight: 600;
+        letter-spacing: -0.01em;
+        color: var(--text-bright);
+      }
+      .tagline {
+        font-size: 1.18rem;
+        color: var(--accent-bright);
+        font-weight: 500;
+        margin-bottom: 18px;
+        letter-spacing: 0.01em;
+      }
+      .body {
+        font-family: "Jost", "DM Sans", sans-serif;
+        color: var(--muted);
+        font-size: 1.05rem;
+        line-height: 1.75;
+        max-width: 520px;
+        margin-bottom: 32px;
+        font-weight: 300;
+      }
+      .actions {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        flex-wrap: wrap;
+        margin-bottom: 24px;
+      }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        padding: 16px 28px;
+        border-radius: 14px;
+        font-family: "Jost", sans-serif;
+        font-size: 0.95rem;
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        text-decoration: none;
+        cursor: pointer;
+        transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+        white-space: nowrap;
+      }
+      .btn-primary {
+        background: linear-gradient(135deg, #ddc18b 0%, #c0a278 100%);
+        color: #171817;
+        border: 1px solid #cbaa70;
+        box-shadow: 0 12px 28px -8px rgba(192, 162, 120, 0.45);
+      }
+      .btn-primary:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 18px 36px -8px rgba(192, 162, 120, 0.7);
+        background: linear-gradient(135deg, #e8cf9c 0%, #ccae79 100%);
+      }
+      .btn-secondary {
+        background: rgba(255, 255, 255, 0.05);
+        color: var(--text);
+        border: 1px solid rgba(236, 228, 215, 0.25);
+      }
+      .btn-secondary:hover {
+        background: rgba(255, 255, 255, 0.1);
+        border-color: var(--accent);
+        color: var(--accent);
+        transform: translateY(-3px);
+      }
+      .arw {
+        transition: transform 0.3s ease;
+      }
+      .btn-primary:hover .arw {
+        transform: translateX(4px);
+      }
+      .micro {
+        color: #8c8577;
+        font-size: 0.88rem;
+        letter-spacing: 0.05em;
+      }
+      .visual {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 48px;
+        background: radial-gradient(circle at center, #2b2821 0%, #171817 75%);
+        border-left: 1px solid rgba(255, 255, 255, 0.05);
+      }
+      .ring {
+        position: relative;
+        width: 220px;
+        height: 220px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #ddc18b, #8c6f43);
+        display: grid;
+        place-items: center;
+        box-shadow: 0 25px 60px rgba(192, 162, 120, 0.25);
+        animation: float 5s ease-in-out infinite;
+      }
+      .inner {
+        width: 172px;
+        height: 172px;
+        border-radius: 50%;
+        background: #171817;
+        display: grid;
+        place-items: center;
+        padding: 24px;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+      }
+      .side-logo {
+        max-width: 90%;
+        height: auto;
+        object-fit: contain;
+        filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.4));
+        animation: logoFloat 4s ease-in-out infinite;
+      }
+      .check-badge {
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        background: #25d366;
+        color: #ffffff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 22px;
+        font-weight: 700;
+        box-shadow: 0 8px 20px rgba(37, 211, 102, 0.45);
+        border: 3px solid #171817;
+      }
+      @keyframes logoFloat {
+        50% {
+          transform: translateY(-6px) scale(1.02);
+        }
+      }
+      @keyframes float {
+        0%, 100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-12px);
+        }
+      }
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(24px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      @media (max-width: 900px) {
+        .card {
+          grid-template-columns: 1fr;
+        }
+        .visual {
+          padding: 38px 24px 20px;
+          border-left: none;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .content {
+          padding: 36px 26px;
+          text-align: center;
+          align-items: center;
+        }
+        .eyebrow {
+          margin-left: auto;
+          margin-right: auto;
+        }
+        .body {
+          margin-left: auto;
+          margin-right: auto;
+        }
+        .actions {
+          justify-content: center;
+          width: 100%;
+        }
+        .btn {
+          width: 100%;
+        }
+        .ring {
+          width: 180px;
+          height: 180px;
+        }
+        .inner {
+          width: 140px;
+          height: 140px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Meta Pixel NoScript -->
+    <noscript>
+      <img
+        height="1"
+        width="1"
+        style="display:none"
+        src="https://www.facebook.com/tr?id=1740025017295865&ev=PageView&noscript=1"
+        alt=""
+      />
+    </noscript>
+    <!-- End Meta Pixel NoScript -->
+
+    <div id="root">
+      <div class="shell">
+        <section class="card" id="thankCard">
+          <div class="content">
+            <div class="eyebrow">
+              <span class="pulse"></span> List With Nikhil
+            </div>
+
+            <h1 id="headingTitle">Thank you</h1>
+            <p class="tagline">Your property details are ready for Nikhil.</p>
+
+            <p class="body">
+              Your property details are ready for Nikhil. Send them across and he will call you personally.
+            </p>
+
+            <div class="actions">
+              <a
+                id="waBtn"
+                href="https://wa.me/919167243606?text=Hi%20Nikhil%2C%20I%20would%20like%20to%20list%20my%20property."
+                class="btn btn-primary"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span>Send details on WhatsApp</span>
+                <span class="arw">&#8594;</span>
+              </a>
+
+              <a href="/" class="btn btn-secondary">
+                &#8592; Back to Home
+              </a>
+            </div>
+
+            <p class="micro">
+              Nikhil Bora &middot; Private Residential Advisory, Mumbai
+            </p>
+          </div>
+
+          <div class="visual">
+            <div class="ring">
+              <div class="inner">
+                <img
+                  src="/img/img-18.png"
+                  alt="Nikhil Bora Realtor"
+                  class="side-logo"
+                />
+              </div>
+              <div class="check-badge">&#10003;</div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <!-- Dynamic URL Parameter Reader for Instant Static Fallback -->
+    <script>
+      (function () {
+        try {
+          var params = new URLSearchParams(window.location.search);
+          var wa = params.get("wa");
+          var name = params.get("name");
+          var btn = document.getElementById("waBtn");
+          var h1 = document.getElementById("headingTitle");
+
+          if (name && h1) {
+            h1.textContent = "Thank you, " + name;
+          }
+          if (wa && btn) {
+            btn.href = wa;
+          } else if (name && btn) {
+            btn.href = "https://wa.me/919167243606?text=" + encodeURIComponent("Hi Nikhil, I have submitted my property details on your website. Name: " + name);
+          }
+        } catch (e) {}
+      })();
+    </script>
+
+    <!-- Vite module entry for ThankYou.jsx -->
+    <script type="module" src="/src/thankYouMain.jsx"></script>
+  </body>
+</html>
