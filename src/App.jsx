@@ -22,6 +22,7 @@ export default function App() {
   const [activeProp, setActiveProp] = useState(null); // {key, img}
   const [pmIdx, setPmIdx] = useState(0);
   const [lb, setLb] = useState(false);
+  const [enqProp, setEnqProp] = useState(null); // property key the consultation enquiry is about
 
   const imgs = useMemo(() => {
     if (!activeProp) return [];
@@ -29,7 +30,8 @@ export default function App() {
     return p && p.imgs && p.imgs.length ? p.imgs : [activeProp.img];
   }, [activeProp]);
 
-  const openBook = () => { setMenu(false); setBookStep(1); setBook(true); };
+  const openBook = () => { setMenu(false); setEnqProp(null); setBookStep(1); setBook(true); };
+  const enquireProp = (key) => { openBook(); setEnqProp(key); };
   const openSell = () => { setMenu(false); setSell(true); };
   const openProp = (key, img) => { const p = PROPS[key]; if (!p) { openBook(); return; } const list = p.imgs && p.imgs.length ? p.imgs : [img]; setActiveProp({ key, img }); setPmIdx(Math.max(0, list.indexOf(img || list[0]))); };
   const onCard = (card) => { if (card.prop) openProp(card.prop, card.img); else openBook(); };
@@ -141,8 +143,8 @@ useEffect(() => {
       </footer>
 
       <SellModal open={sell} onClose={() => setSell(false)} />
-      <PropertyModal activeProp={activeProp} imgs={imgs} idx={pmIdx} setIdx={setPmIdx} onClose={() => setActiveProp(null)} onEnquire={() => { setActiveProp(null); openBook(); }} onOpenLb={() => imgs.length && setLb(true)} lbOpen={lb} />
-      <BookModal open={book} step={bookStep} setStep={setBookStep} onClose={() => setBook(false)} />
+      <PropertyModal activeProp={activeProp} imgs={imgs} idx={pmIdx} setIdx={setPmIdx} onClose={() => setActiveProp(null)} onEnquire={() => { const k = activeProp.key; setActiveProp(null); enquireProp(k); }} onOpenLb={() => imgs.length && setLb(true)} lbOpen={lb} />
+      <BookModal open={book} propKey={enqProp} step={bookStep} setStep={setBookStep} onClose={() => setBook(false)} />
       <Lightbox open={lb} imgs={imgs} idx={pmIdx} setIdx={setPmIdx} onClose={() => setLb(false)} />
     </>
   );

@@ -952,3 +952,32 @@ export const LEDGER = [
 // Areas used across the sell + consultation forms
 export const AREAS = ["Wadala","Sion","Dadar","Parel","Sewri","Mahalaxmi","Worli","Lower Parel","Prabhadevi","Bandra","Other"];
 export const CONTACT = { whatsapp: "919167243606", waDisplay: "+91 91672 43606", tel: "+919167243606", tidycal: "https://tidycal.com/nbrealtorr/30-minute-meeting" };
+
+/* MahaRERA registration number per property (keyed like PROPS). Fill in the
+   official number from maharera.maharashtra.gov.in; leave "" to hide it. */
+export const RERA = {
+  aureus: "PR1170002502863", // Lodha Aureus
+  sobha: "PR1170002501523", // Sobha Inizio
+  icc: "PR1171012502563, PR1172022600316, PR1172022600317", // Three ICC
+  divino: "P51900049433, P51900051742, P51900051743", // Lodha Divino
+  raheja: "P51900054129, P51900054152", // Raheja Amaltis
+  godrejh: "P51900034851, P51900049757, P51900078358", // Godrej Horizon
+  kalpataru: "P51900055246, P51900079410", // Kalpataru One
+  kalpataru_avana: "P51900000793", // Kalpataru Avana
+  lt_gateway: "P51900054969", // L&T Gateway
+  sattva_sumera: "PM1170002502568", // Sattva Sumera
+  lodha_vero: "P51900052415", // Lodha Vero
+  lodha_the_park: "P51900001339, P51900014937", // Lodha The Park
+  lodha_world_tower: "P51900008345, P51900008962", // Lodha World Tower
+  raheja_imperia: "P51900009379", // Raheja Imperia
+  raheja_rivere: "P51900032251", // Raheja Rivere
+  runwal_raaya: "P51900080218, P51900080252", // Runwal Raaya
+  lodha_bellevue: "P51900046567, P51900046594", // Lodha Bellevue
+  piramal_mahalaxmi: "P51900015854, P51900016482, P51900021057", // Piramal Mahalaxmi
+  godrej_avenue_eleven: "P51900005216, P51900006299", // Godrej Avenue Eleven
+  raheja_modern_vivarea: "P51900034289, P51900034288", // Raheja Modern Vivarea
+  shapoorji_minerva: "P51900008204", // Shapoorji Minerva
+  rustomjee_crown: "P51900003268, P51900006367", // Rustomjee Crown
+  rustomjee_180_bay_view: "P51900066547, P51900066548", // Rustomjee 180 Bay View
+  lt_island_cove: "P51900046369, P51900080584, PR1170002500784", // L&T Island Cove
+};

@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { PROPS, AREAS, CONTACT } from "./data.js";
+import { PROPS, RERA, AREAS, CONTACT } from "./data.js";
 import { bg, EMAIL_RE, validatePhone, phoneError } from "./lib.js";
 import PhoneField from "./PhoneField.jsx";
 import { submitLead } from "./api/submitLead.js";
@@ -8,7 +8,9 @@ const err = { color: "#c0392b", fontSize: "12.5px", marginTop: "5px", display: "
 const wa = (lines) => `https://wa.me/${CONTACT.whatsapp}?text=${encodeURIComponent(lines.filter(Boolean).join("\n"))}`;
 
 /* ---------- Consultation (book) modal, 2 steps ---------- */
-export function BookModal({ open, step, setStep, onClose }) {
+export function BookModal({ open, propKey, step, setStep, onClose }) {
+  const propName = (propKey && PROPS[propKey] && PROPS[propKey].name) || "";
+  const rera = (propKey && RERA[propKey]) || "";
   const [f, setF] = useState({ name: "", phone: "", dial: "+91", email: "", type: "To live in", budget: "\u20b93.5 Cr to \u20b95 Cr", area: "", msg: "" });
   const [e, setE] = useState({});
   const [busy, setBusy] = useState(false);
@@ -26,10 +28,10 @@ export function BookModal({ open, step, setStep, onClose }) {
     setE(er); if (Object.keys(er).length) return;
     setBusy(true);
     try {
-      await submitLead({ form_type: "consultation", subject: `New Lead - Nikhil Bora Consultation`, name: f.name.trim(), phone: `${f.dial}${f.phone}`, email: f.email.trim(), buying_for: f.type, budget: f.budget, preferred_area: f.area, message: f.msg.trim() });
+      await submitLead({ form_type: "consultation", subject: `New Lead - Nikhil Bora Consultation`, name: f.name.trim(), phone: `${f.dial}${f.phone}`, email: f.email.trim(), buying_for: f.type, budget: f.budget, preferred_area: f.area, message: f.msg.trim(), property_name: propName || "-", rera_number: propName ? (rera || "-") : "-" });
     } catch (err2) { console.error("Lead submit failed:", err2); }
     setBusy(false);
-    setWaLink(wa(["Hi Nikhil, I would like to book a consultation.", "", "Name: " + f.name.trim(), "Phone: " + f.dial + f.phone, f.email.trim() ? "Email: " + f.email.trim() : "", "Buying for: " + f.type, "Budget: " + f.budget, "Preferred area: " + f.area, f.msg.trim() ? "Looking for: " + f.msg.trim() : ""]));
+    setWaLink(wa(["Hi Nikhil, I would like to book a consultation.", "", "Name: " + f.name.trim(), "Phone: " + f.dial + f.phone, f.email.trim() ? "Email: " + f.email.trim() : "", "Buying for: " + f.type, "Budget: " + f.budget, "Preferred area: " + f.area, propName ? "Property: " + propName : "", propName && rera ? "MahaRERA: " + rera : "", f.msg.trim() ? "Looking for: " + f.msg.trim() : ""]));
     setStep(2);
   }
 
@@ -40,7 +42,7 @@ export function BookModal({ open, step, setStep, onClose }) {
         <button className="x" aria-label="Close" onClick={onClose}>&#215;</button>
         <div className="pad">
           <div style={{ display: step === 1 ? "block" : "none" }}>
-            <span className="eyebrow">By Appointment</span><h3>Request a <em>consultation</em>.</h3><p className="sub">A few details first, then pick a time that suits you.</p>
+            <span className="eyebrow">By Appointment</span><h3>Request a <em>consultation</em>.</h3><p className="sub">{propName ? <>Enquiring about <b>{propName}</b>. </> : null}A few details first, then pick a time that suits you.</p>
             <form className="mform" noValidate onSubmit={submit}>
               <div className="frow">
                 <div className="fld"><label htmlFor="m-name">Your name</label><input id="m-name" ref={nameRef} type="text" autoComplete="name" value={f.name} onChange={set("name")} aria-invalid={!!e.name} />{e.name && <small style={err}>{e.name}</small>}</div>
@@ -155,7 +157,7 @@ export function PropertyModal({ activeProp, imgs, idx, setIdx, onClose, onEnquir
           {imgs.length > 1 && <div className="pm-thumbs">{imgs.map((k, i) => { const tb = bg(k); return <button key={i} className={`pth ${tb.className}${i === idx ? " on" : ""}`} style={tb.style} aria-label="View photo" onClick={() => setIdx(i)} />; })}</div>}
         </div>
         <div className="pad">
-          <span className="eyebrow">{p.dev}</span><h3>{p.name}</h3><div className="pm-loc">{p.loc}</div><p className="pm-desc">{p.desc}</p>
+          <span className="eyebrow">{p.dev}</span><h3>{p.name}</h3><div className="pm-loc">{p.loc}</div>{RERA[activeProp.key] && <div className="pm-loc">MahaRERA: {RERA[activeProp.key]}</div>}<p className="pm-desc">{p.desc}</p>
           <div className="pm-specs">{p.specs && p.specs.length
             ? p.specs.map((s, i) => <div className="row" key={i}><span className="k">{s[0]}</span><span className="v">{s[1]}</span></div>)
             : <p className="pm-onreq">Configurations and pricing shared privately, on request.</p>}</div>
