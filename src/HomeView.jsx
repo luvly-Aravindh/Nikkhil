@@ -102,7 +102,7 @@ export default function HomeView({ onBook, onSell, onCard, onProperties }) {
             <div className="pr"><h3><em>Loyalty</em></h3><p>One client at a time on your side. Your budget stays confidential, and your interest comes before the deal.</p></div>
             <div className="pr"><h3><em>Ethics</em></h3><p>Everything in writing. A fully compliant, fully documented purchase, whether you are in Mumbai or abroad.</p></div>
           </div>
-          <div className="facts"><span>Advising since <b>2014</b></span><span><b>Buyer-side</b> only</span><span>South Mumbai &amp; beyond</span><span>&#8377;3.5* Cr to &#8377;200* Cr</span></div>
+          <div className="facts"><span>Advising since <b>2014</b></span><span><b>Buyer-side</b> only</span><span>South Mumbai &amp; beyond</span><span>&#8377;3.5 Cr* to &#8377;200 Cr*</span></div>
         </div>
       </section>
 
